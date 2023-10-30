@@ -4,7 +4,6 @@
 # Godot-specific ignores
 .import/
 export.cfg
-export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -13,3 +12,15 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+.idea/
+.plugged/
+
+trash/
+
+addons/gd-plug-ui
+addons/expand-region
+addons/find-everywhere
+addons/previous-tab
+addons/script-tabs
+addons/gdUnit4
