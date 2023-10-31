@@ -11,12 +11,6 @@ func _enter_tree():
 
 
 func run():
-	var current_cfg_path = get_cfg_dir().path_join(cfg_name)
-	if not FileAccess.file_exists(current_cfg_path):
-		push_error("Config file was not found at %s" % current_cfg_path)
-		return
-	print("Found cfg at %s" % current_cfg_path)
-	
 	var left = get_left_cfg()
 	var right = get_right_cfg()
 	
@@ -28,12 +22,14 @@ func run():
 	var load_err = left.load()
 	if load_err != OK:
 		push_error("%s. Failed to load left config at %s" % [load_err, left.get_path()])
+		return
 	else:
 		print("Loaded left cfg at %s" % left.get_path())
 	
 	load_err = right.load()
 	if load_err != OK:
 		push_error("%s. Failed to load right config at %s" % [load_err, right.get_path()])
+		return
 	else:
 		print("Loaded right cfg at %s" % right.get_path())
 	
